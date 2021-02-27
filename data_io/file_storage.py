@@ -28,6 +28,5 @@ class FileStorage:
         except FileNotFoundError as err:
             return err
 
-
 if __name__ == '__main__':
     print(Path.cwd())
