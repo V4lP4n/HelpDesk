@@ -1,0 +1,2 @@
+db_type = sql
+logs_path = storage/logs/
