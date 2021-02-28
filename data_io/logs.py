@@ -1,13 +1,14 @@
 import logging
-from data_io.file_storage import FileStorage
 
 
 class Logger:
     def __init__(self, logs_path):
-        self.logs_path = logs_path
+        self.logs_path = str(logs_path)  # avoiding attribute error
 
     def log(self, message, source, log_type):
         try:
+            message, source, log_type = str(message), str(source), str(log_type)
+
             # don't even try absolute paths
             if self.logs_path.startswith('/'):
                 raise PermissionError

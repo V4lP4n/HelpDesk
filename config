@@ -1,2 +1,3 @@
-db_type = sql
+db_type = SQLite
+db_address = storage/db/sqlite.db
 logs_path = storage/logs/

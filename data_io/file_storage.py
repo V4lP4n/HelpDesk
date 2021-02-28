@@ -4,10 +4,11 @@ from pathlib import Path
 class FileStorage:
 
     def __init__(self, workdir=Path.cwd()):
-        self.workdir = workdir
+        self.workdir = str(workdir)
 
     def read_config(self, allowed_conf, conf_path=''):
         """Try to read config file and return values or error"""
+        allowed_conf, conf_path = str(allowed_conf), str(conf_path)
         try:
             with open(conf_path + 'config') as conf:
                 keys = []
@@ -28,5 +29,4 @@ class FileStorage:
         except FileNotFoundError as err:
             return err
 
-if __name__ == '__main__':
-    print(Path.cwd())
+
