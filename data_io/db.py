@@ -13,10 +13,21 @@ class DataBaseIO:
             connection = TypeError('Not supported database type')
 
         self.connection = connection
+        self.cursor = self.connection.cursor()
 
     def get_handler(self, data, table):
         if self.db_type == 'SQLite':
             self._get_sqlite(data, table)
+
+    def db_prep(self, conf):
+        print(conf)
+        for table in conf['tables']:
+            fields = ''
+
+            for key, value in conf['tables'][table].items():
+                fields += key + ' ' + value + ','
+
+            self.cursor.execute(f'CREATE TABLE IF NOT EXISTS {table} ({fields[:-1]})')
 
     def _get_sqlite(self, data, table):
         pass

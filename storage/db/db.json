@@ -1,0 +1,20 @@
+{
+  "tables": {
+
+    "user": {
+      "username": "VARCHAR(10)",
+      "pass_hash": "VARCHAR(20)",
+      "first_name": "VARCHAR(10)",
+      "last_name": "VARCHAR(10)",
+      "patronymic": "VARCHAR(10)",
+      "place": "VARCHAR(10)",
+      "type": "VARCHAR(3)"
+    }
+      ,
+      "request":{
+        "client": "VARCHAR(10)",
+        "executor": "VARCHAR(10)"
+
+    }
+  }
+}

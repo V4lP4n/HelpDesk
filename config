@@ -1,3 +1,4 @@
 db_type = SQLite
 db_address = storage/db/sqlite.db
+db_conf = storage/db/db.json
 logs_path = storage/logs/
